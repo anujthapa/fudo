@@ -1,0 +1,38 @@
+.signup{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  height: 90vh;
+  position: relative ;
+  top:-8.1vh;
+  
+  video{
+    max-width: 100%;
+    position: absolute ;
+    top:1;
+   
+  }
+  .background{
+    background-color: #132929;
+    height:60vh;
+    width:40vw;
+    opacity: .7;
+    bottom:130vh;
+
+  }
+  .content{
+    position: absolute ;
+    top:16vw;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+   
+   span{
+     margin-top:-5vh;
+     width:100%;
+    }
+  }
+ 
+}

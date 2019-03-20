@@ -1,0 +1,39 @@
+$background: #13292a;
+$font-color1: #ffff;
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+ 
+
+  .header-top {
+    width: 100vw;
+    height: 4vh;
+    background-color: $background;
+  }
+  .header-main {
+    width: 60vw;
+    display: flex;
+    flex-wrap: flex;
+    justify-content: space-around;
+    background-color: $background;
+    color: $font-color1;
+    padding: 2vh;
+    border-radius : 0 0 50% 50%;
+    font-size: 2vh;	
+    z-index: 1;
+    
+    
+    .navlink{
+      text-decoration: none;
+      color:white;
+      font-size: 3vh;
+   
+    }
+
+  }     
+      li {
+        display: inline;
+        text-decoration: none;  
+  }
+}
