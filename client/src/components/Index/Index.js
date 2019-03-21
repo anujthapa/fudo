@@ -3,12 +3,9 @@ import IndexMenu from "./Indexmenu"
 import "./index.scss"
 import { PropTypes } from "prop-types"
 import { connect } from "react-redux"
-import { getData } from "../../redux/action/indexAction"
-
+import { getPost } from "../../redux/action/foodAction"
+import { data } from "../utlis/data"
 class Index extends React.Component {
-  componentWillMount() {
-    this.props.getData()
-  }
   render() {
     console.log(this.props.index)
     return (
@@ -16,7 +13,7 @@ class Index extends React.Component {
         <div className="index-slider">
           <div id="slider">
             <figure>
-              {this.props.index.map(item => (
+              {data.map(item => (
                 <img src={item.img} />
               ))}
             </figure>
@@ -28,20 +25,14 @@ class Index extends React.Component {
           <div className="heading">
             <h1>Our Menu</h1>
           </div>
+
+          <IndexMenu link={data[0].img} heading="Breakfast" />
+          <IndexMenu link={data[2].img} heading="Lunch" />
+          <IndexMenu link={data[3].img} heading="Dinner" />
         </div>
       </div>
     )
   }
 }
-Index.propTypes = {
-  index: PropTypes.object.isRequired,
-  getData: PropTypes.func.isRequired
-}
-const mapStateToProps = state => ({
-  index: state.index.foodmenu
-})
 
-export default connect(
-  mapStateToProps,
-  { getData }
-)(Index)
+export default Index

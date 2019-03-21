@@ -1,0 +1,19 @@
+.dashboard{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  .header{
+width:100%;
+display:flex;
+justify-content: center;
+align-items: center;
+.name{
+  flex:1;
+}
+.menu{
+  flex:1
+}
+  }
+ 
+}

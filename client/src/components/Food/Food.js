@@ -5,12 +5,10 @@ import Foodcard from "./Foodcard"
 import "./food.scss"
 import { connect } from "react-redux"
 import { PropTypes } from "prop-types"
-import { getData } from "../../redux/action/indexAction"
+import { getPost } from "../../redux/action/foodAction"
+import { data } from "../utlis/data"
 
 class Food extends Component {
-  componentWillMount() {
-    this.props.getData()
-  }
   render() {
     return (
       <div className="food">
@@ -18,7 +16,7 @@ class Food extends Component {
           <Searchbar />
         </div>
         <div className="foodcard">
-          {this.props.index.map(item => (
+          {data.map(item => (
             <Foodcard
               img={item.img}
               heading={item.name}
@@ -35,14 +33,5 @@ class Food extends Component {
     )
   }
 }
-Food.propTypes = {
-  index: PropTypes.object.isRequired,
-  getData: PropTypes.func.isRequired
-}
-const mapStateToProps = state => ({
-  index: state.index.foodmenu
-})
-export default connect(
-  mapStateToProps,
-  { getData }
-)(Food)
+
+export default Food
